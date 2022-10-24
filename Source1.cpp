@@ -35,7 +35,6 @@ void insertAfter(vector<int> V, int firstValue, int secondValue) {
 		}
 
 		if (cursor->next == NULL) {
-			cout << "Error";
 			return;
 		}
 		node* p = new node;
@@ -50,7 +49,6 @@ void insertAfter(vector<int> V, int firstValue, int secondValue) {
 			cursor = cursor->next;
 		}
 		if (cursor->next == NULL) {
-			cout << "Error";
 			return;
 		}
 		cursor = cursor->next;	//cursor points to position
