@@ -102,30 +102,33 @@ public:
 		}
 	}
 	l_list vec_list(vector<int> V) {
+	
 		l_list list;
-		vector<int>::iterator Iter = V.begin();
-		list.insert_first(*Iter);
-
-		for (Iter = V.begin(); Iter <= V.end(); Iter++) {
-			cursor = list.head;
-			do {
-				
-				if (cursor->num == *Iter) {
+		int i = 0;
+		bool test = false;
+		list.insert_first(V[i]);
+		i++;
+		do {
+			list.toFirst();
+			while (cursor->next != NULL) {
+				if (V[i] == cursor->num) {
 					cursor->occurences++;
-					Iter++;
-					continue;
-				}
-				if (cursor->next == NULL) {
-					list.insert_end(*Iter);
-					Iter++;
-					continue;
+					bool test = true;
 				}
 				cursor = cursor->next;
-			} while (Iter <= V.size());
-		}
+			}
+			if (!test) {
+				node * 0 = new node;
+				p->num = V[i];
+				p->next = NULL;
+				cursor->next=NULL: //to insert at the end
+			}
+			test = false;
+			i++;
+		} while (i <= V.size());
 
 		return list;
-	}
+	} 
 
 	int list_sum() {
 		toFirst();
